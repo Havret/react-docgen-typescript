@@ -15,10 +15,12 @@ export interface IButtonProps extends HTMLProps<HTMLButtonElement> {
     prop3: () => void;
     /** prop4 description */
     prop4: 'option1' | 'option2' | "option3";
+    // Not a doc comment
+    prop5: null;
 }
 
 /**
- * Column description
+ * Button description
  */
 export class Button extends React.Component<IButtonProps, {}> {
     public static defaultProps: Partial<IButtonProps> = {

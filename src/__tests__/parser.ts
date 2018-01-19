@@ -29,7 +29,7 @@ describe('parser', () => {
             }
         });
     });
-    
+
     it('should parse simple react class component as default export only', function() {
         check('ColumnWithDefaultExportOnly', {
             ColumnWithDefaultExportOnly: {
@@ -287,12 +287,11 @@ describe('parser', () => {
     it('should skip props without documentation, if flag skipPropsWithoutDoc is passed', function () {
         check('Button', {
             Button: {
-                children,
                 prop1: { type: 'string', required: false },
                 prop2: { type: 'number' },
                 prop3: { type: '() => void' },
                 prop4: { type: '"option1" | "option2" | "option3"' },
             }
-        }, true, null, true);
+        }, true, null, {skipPropsWithoutDoc: true});
     });
 });
